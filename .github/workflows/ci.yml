@@ -2,13 +2,18 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    env:
+      ZIG_GLOBAL_CACHE_DIR: .zig-global-cache
+      ZIG_LOCAL_CACHE_DIR: zig-cache
 
     steps:
       - name: Check out repository

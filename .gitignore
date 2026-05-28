@@ -1,3 +1,4 @@
 zig-cache/
 zig-out/
+.zig-global-cache/
 .DS_Store
